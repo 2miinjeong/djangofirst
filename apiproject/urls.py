@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+#url 처리를 다른 모듈에게 위임하고자 할 때 사용하는 패키지
+from django.urls import include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("example/", include("apiapp.urls")),
 ]
